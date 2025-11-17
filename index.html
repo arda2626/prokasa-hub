@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ProKasa Hub — Kasa Simülatörleri</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="CS2 / Valorant / Wild Rift kasa simülatörleri — ücretsiz, hızlı ve mobil uyumlu." />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">PK</div>
+      <div class="title">
+        <h1>ProKasa Hub</h1>
+        <small>Ücretsiz Kasa Simülatörleri</small>
+      </div>
+    </div>
+    <nav class="nav">
+      <button data-target="cs2" class="nav-btn active">CS2</button>
+      <button data-target="valo" class="nav-btn">Valorant</button>
+      <button data-target="wr" class="nav-btn">Wild Rift</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="cs2" class="panel active">
+      <h2>CS2 Kasa Simülatörü</h2>
+      <div class="crate-wrap">
+        <div class="crate" id="crate-cs2"></div>
+      </div>
+      <div class="controls">
+        <button class="btn primary" data-game="cs2" id="open-cs2">Kasa Aç</button>
+        <button class="btn" id="multi-cs2">10 Kasa Aç</button>
+        <button class="btn ghost" id="save-cs2">Koleksiyona Ekle</button>
+      </div>
+      <div class="result" id="result-cs2">Ödül: —</div>
+    </section>
+
+    <section id="valo" class="panel">
+      <h2>Valorant Kasa Simülatörü</h2>
+      <div class="crate-wrap">
+        <div class="crate" id="crate-valo"></div>
+      </div>
+      <div class="controls">
+        <button class="btn primary" data-game="valo" id="open-valo">Kasa Aç</button>
+        <button class="btn" id="multi-valo">10 Kasa Aç</button>
+        <button class="btn ghost" id="save-valo">Koleksiyona Ekle</button>
+      </div>
+      <div class="result" id="result-valo">Ödül: —</div>
+    </section>
+
+    <section id="wr" class="panel">
+      <h2>Wild Rift Kasa Simülatörü</h2>
+      <div class="crate-wrap">
+        <div class="crate" id="crate-wr"></div>
+      </div>
+      <div class="controls">
+        <button class="btn primary" data-game="wr" id="open-wr">Kasa Aç</button>
+        <button class="btn" id="multi-wr">10 Kasa Aç</button>
+        <button class="btn ghost" id="save-wr">Koleksiyona Ekle</button>
+      </div>
+      <div class="result" id="result-wr">Ödül: —</div>
+    </section>
+
+    <aside class="side">
+      <h3>Koleksiyonun</h3>
+      <div id="collection" class="collection">Henüz bir şey yok.</div>
+      <div class="share-row">
+        <button class="btn" id="share-btn">Sonucu Paylaş</button>
+        <button class="btn ghost" id="clear-collection">Temizle</button>
+      </div>
+      <p class="hint">Uygulama ücretsiz test sürümüdür. Reklam veya satın alma yoktur.</p>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <small>© ProKasa Hub — Test sürümü</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
