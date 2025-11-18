@@ -1,47 +1,54 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProKasa Hub</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root{
+  --bg1:#0f0f11; --panel:#171717; --muted:#9aa0a6;
+  --common:#9d9d9d; --restricted:#ff8040; --classified:#9933cc; --covert:#cc3333; --legendary:#ffd700;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#0b0b0c 0%, #161617 100%);font-family:Inter,Segoe UI,Arial,sans-serif;color:#fff}
+.page{max-width:980px;margin:18px auto;padding:18px}
+header{display:flex;align-items:center;justify-content:space-between;padding:6px 0}
+header h1{margin:0;font-size:20px}
+.balance{font-weight:600;color:var(--muted)}
+.boxes{display:flex;gap:14px;justify-content:center;margin:18px 0}
+.box{width:140px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.15));padding:12px;border-radius:10px;text-align:center;cursor:pointer;border:1px solid rgba(255,255,255,0.04);transition:transform .18s, box-shadow .18s}
+.box img{width:80px;height:80px;object-fit:contain;display:block;margin:0 auto 8px}
+.box:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.box.silver{box-shadow:0 6px 18px rgba(200,200,200,0.03)}
+.box.gold{box-shadow:0 6px 18px rgba(255,215,0,0.04)}
+.box.diamond{box-shadow:0 6px 18px rgba(0,255,255,0.03)}
 
-<div class="header">
-    <h1>ProKasa Hub</h1>
-    <p>Kasa Simülatörleri • Oyun Araçları • Trend Tahminleri</p>
-</div>
+.panel{display:flex;gap:20px;align-items:flex-start;justify-content:center;flex-direction:column;align-items:center}
+.animation{width:680px;height:220px;background:linear-gradient(180deg,#0f1011,#141416);border-radius:12px;border:1px solid rgba(255,255,255,0.03);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.animation .slot{display:flex;align-items:center;height:160px;padding:12px;transform:translateX(0);transition:transform 1.2s cubic-bezier(.25,.9,.2,1)}
+.animation .slot img{width:140px;height:140px;object-fit:contain;margin:0 10px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,0.02);transition:transform .15s, box-shadow .2s}
 
-<div class="container">
+.result{min-height:0;margin-top:12px;transition:all .35s;display:flex;flex-direction:column;align-items:center}
+.result .win{padding:12px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04)}
+.result .win img{width:220px;height:220px;object-fit:contain;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.result p{margin:0;font-weight:700}
 
-    <a class="card" href="#">
-        <h2>🎮 CS2 Kasa Simülatörü</h2>
-        <p>Rastgele kasa aç • Drop gör</p>
-    </a>
+/* rarity styles */
+.rarity-common{color:var(--common)}
+.rarity-Restricted{color:var(--restricted);text-shadow:0 0 10px var(--restricted)}
+.rarity-Classified{color:var(--classified);text-shadow:0 0 10px var(--classified)}
+.rarity-Covert{color:var(--covert);text-shadow:0 0 10px var(--covert)}
+.rarity-Legendary{color:var(--legendary);text-shadow:0 0 12px var(--legendary)}
 
-    <a class="card" href="#">
-        <h2>🔥 Valorant Kasa Simülatörü</h2>
-        <p>VP harcamadan aç • Skin düşür</p>
-    </a>
+/* collection */
+.collection{margin-top:22px;background:var(--panel);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+#collection{display:flex;flex-wrap:wrap;gap:8px}
+#collection img{width:64px;height:64px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:transform .12s, box-shadow .15s}
+#collection img:hover{transform:scale(1.12);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
 
-    <a class="card" href="#">
-        <h2>⚡ Wild Rift Skin Simülatörü</h2>
-        <p>Kutular & kostümler</p>
-    </a>
+/* tooltip */
+.tooltip{position:fixed;display:none;padding:8px 10px;background:rgba(0,0,0,0.85);border-radius:6px;font-size:13px;color:#fff;z-index:60;pointer-events:none;border:1px solid rgba(255,255,255,0.04)}
 
-    <a class="card" href="#">
-        <h2>🍀 Şans & Lotto Random</h2>
-        <p>Trend sayı üretici</p>
-    </a>
+/* particles canvas */
+.particles{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:5}
 
-    <a class="card" href="#">
-        <h2>📊 Trend Analiz</h2>
-        <p>En çok aranan kelimeler</p>
-    </a>
-
-</div>
-
-<script src="app.js"></script>
-</body>
-</html>
+/* responsive */
+@media (max-width:800px){
+  .animation{width:92%;height:180px}
+  .animation .slot img{width:110px;height:110px}
+  .box{width:110px}
+  #collection img{width:48px;height:48px}
+}
