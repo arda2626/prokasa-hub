@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProKasa Hub</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Hellcase Simulator — Final</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="page">
+  <header>
+    <h1>Hellcase Simulator — Final</h1>
+    <div class="balance">Sanal Coin: <span id="coin">3000</span></div>
+  </header>
 
-<div class="header">
-    <h1>ProKasa Hub</h1>
-    <p>Kasa Simülatörleri • Oyun Araçları • Trend Tahminleri</p>
-</div>
+  <main>
+    <section class="boxes">
+      <div class="box silver" data-type="silver"><img src="https://i.imgur.com/TB2TjvR.png"><div>Gümüş - 100</div></div>
+      <div class="box gold"   data-type="gold"><img src="https://i.imgur.com/pW6O2Lz.png"><div>Altın - 300</div></div>
+      <div class="box diamond"data-type="diamond"><img src="https://i.imgur.com/yQ9PjVx.png"><div>Elmas - 500</div></div>
+    </section>
 
-<div class="container">
+    <section class="panel">
+      <div id="animation" class="animation">
+        <!-- slot container injected here -->
+      </div>
 
-    <a class="card" href="#">
-        <h2>🎮 CS2 Kasa Simülatörü</h2>
-        <p>Rastgele kasa aç • Drop gör</p>
-    </a>
+      <div id="result" class="result">
+        <!-- big win panel -->
+      </div>
+    </section>
 
-    <a class="card" href="#">
-        <h2>🔥 Valorant Kasa Simülatörü</h2>
-        <p>VP harcamadan aç • Skin düşür</p>
-    </a>
+    <section class="collection">
+      <h3>Koleksiyonun</h3>
+      <div id="collection"></div>
+    </section>
+  </main>
 
-    <a class="card" href="#">
-        <h2>⚡ Wild Rift Skin Simülatörü</h2>
-        <p>Kutular & kostümler</p>
-    </a>
+  <div id="tooltip" class="tooltip" aria-hidden="true"></div>
 
-    <a class="card" href="#">
-        <h2>🍀 Şans & Lotto Random</h2>
-        <p>Trend sayı üretici</p>
-    </a>
+  <canvas id="particles" class="particles"></canvas>
 
-    <a class="card" href="#">
-        <h2>📊 Trend Analiz</h2>
-        <p>En çok aranan kelimeler</p>
-    </a>
+  <!-- sounds -->
+  <audio id="sound-open" preload="auto" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_9b2a7d3a2a.mp3?filename=slot-machine-1-6016.mp3"></audio>
+  <audio id="sound-win"  preload="auto" src="https://cdn.pixabay.com/download/audio/2021/12/15/audio_a5c5e2b3f4.mp3?filename=success-fanfare-trumpets-6185.mp3"></audio>
 
+  <footer class="footer">
+    <small>Demo — gerçek para içermez. Tüm skin verileri community JSON API (ByMykel) üzerinden çekilir.</small>
+  </footer>
 </div>
 
 <script src="app.js"></script>
